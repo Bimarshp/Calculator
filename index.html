@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="apil.css">
+    <table border="1"> 
+        <tr>
+             <input type="text"  id="result">
+        </tr>
+        <tr>
+            <td><button onclick="display('7')">7</button></td>
+            <td><button onclick="display('8')">8</button></td>
+            <td><button onclick="display('9')">9</button></td>
+            <td><button onclick="decrease()" id="color">DEL</button></td>
+            <td><button onclick="reset()" id="color">AC</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('4')">4</button></td>
+            <td><button onclick="display('5')">5</button></td>
+            <td><button onclick="display('6')">6</button></td>
+            <td><button onclick="display('*')" id="color">*</button></td>
+            <td><button onclick="display('/')" id="color">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('1')">1</button></td>
+            <td><button onclick="display('2')">2</button></td>
+            <td><button onclick="display('3')"> 3</button></td>
+            <td><button onclick="display('+')" id="color">+</button></td>
+            <td><button onclick="display('-')" id="color">-</button></td>
+
+        </tr>
+        <tr>
+            <td><button onclick="display('0')">0</button></td>
+            <td><button onclick="display('.')">.</button></td>
+            <td><button onclick="display('*10')">*10</button></td>
+            <td><button onclick="display('Ans')" id="color">Ans</button></td>
+            <td><button onclick="calculate()" id="color">=</button></td>
+        </tr>
+    </table>
+    <!-- <BUTTON onclick="calculate()"></BUTTON> -->
+    <script>
+        
+        function display(val){
+            document.getElementById("result").value+=val;
+        }
+        function reset(){
+            document.getElementById("result").value="";
+        }
+        // function decrease(){
+        //     var a=Number(document.getElementById("result").value);
+        //     var r=a%10;
+        //     var sum=r*10-a;
+        //     document.getElementById("result").value=sum;
+        // }
+        // function evaluate(){
+        //     alert("success");
+        //     document.getElementById("result").value = eval(document.getElementById("result").value);
+        // }
+        function calculate(){
+            if(document.getElementById("result").value){
+            document.getElementById("result").value = eval(document.getElementById("result").value);
+            }
+        }
+    </script>
+</body>
+</html>
